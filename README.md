@@ -22,19 +22,4 @@ The goal is to show how TFDV can be used to explore, validate, and slice real-wo
 ├─ img/                      # Images used by the original lab
 └─ ...                       # Jupyter checkpoints and other support files
 
-Datasets
-1. Original lab dataset
 
-The original TFDV lab uses a small tabular dataset stored under data/.
-It is kept as-is to preserve the original exercise and to contrast with the Telco example.
-The original notebook walks through:
--- Computing statistics with tfdv.generate_statistics_from_csv
-- Inferring a schema with tfdv.infer_schema
-- Validating evaluation data against that schema
-- Performing simple slicing and anomaly inspection
-
-2. Telco Customer Churn dataset (new)
-
-The extended part of the lab uses the Telco Customer Churn dataset.
-Source: IBM / Kaggle Telco Customer Churn dataset.
-The CSV is included in this repository as:
