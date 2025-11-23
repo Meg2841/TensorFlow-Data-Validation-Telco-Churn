@@ -28,7 +28,7 @@ Datasets
 The original TFDV lab uses a small tabular dataset stored under data/.
 It is kept as-is to preserve the original exercise and to contrast with the Telco example.
 The original notebook walks through:
-- Computing statistics with tfdv.generate_statistics_from_csv
+-- Computing statistics with tfdv.generate_statistics_from_csv
 - Inferring a schema with tfdv.infer_schema
 - Validating evaluation data against that schema
 - Performing simple slicing and anomaly inspection
