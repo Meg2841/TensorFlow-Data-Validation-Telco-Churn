@@ -1,8 +1,8 @@
 # TensorFlow Data Validation – Telco Customer Churn
 
 This project is an extended version of a TensorFlow Data Validation (TFDV) lab.  
-The original lab demonstrates how to use TFDV on a small example dataset.  
-This version adds a second, richer case study using the Telco Customer Churn dataset and a few extra utilities.
+The original lab demonstrates how to use TFDV on a dataset.  
+This version adds a second case study using the Telco Customer Churn dataset and a few extra utilities.
 
 The goal is to show how TFDV can be used to explore, validate, and slice real-world data in a way that is closer to production workflows.
 
@@ -37,7 +37,7 @@ The original notebook walks through:
 - Validating evaluation data against that schema
 - Performing simple slicing and anomaly inspection
 
-### 2. Telco Customer Churn dataset (new)
+### 2. Telco Customer Churn dataset
 
 The extended part of the lab uses the Telco Customer Churn dataset.  
 Source: IBM / Kaggle Telco Customer Churn dataset.  
@@ -73,9 +73,8 @@ The first part of `TFDV_Lab1.ipynb` follows the provided lab:
 - Validates evaluation data and shows anomalies
 - Demonstrates basic slicing and anomaly exploration
 
-This section is mostly unchanged from the original lab and serves as a foundation.
 
-### Telco extension section (new)
+### Telco extension section
 
 The second part of the notebook adds a new workflow built around the Telco dataset.  
 The key steps are:
@@ -122,7 +121,7 @@ The key steps are:
    - The anomaly view shows whether any features violate the new constraints or exhibit unexpected behavior.
    - In the current configuration, the dataset passes the stricter checks, which is also a useful result.
 
-8. **Slice-level drift-style comparison (optional section)**
+8. **Slice-level drift-style comparison **
 
    - Short-tenure statistics are treated as a reference, and long-tenure statistics as an evaluation set.
    - TFDV’s visualization is used to compare distributions between these slices.
@@ -138,8 +137,6 @@ The key steps are:
      - Create a summary table for important Telco features such as `tenure`, `MonthlyCharges`, `TotalCharges`, and `Churn`.
      - Compare average values of numeric features between short-tenure and long-tenure customers.
    - These summaries complement the TFDV visualizations with simple numerical views.
-
-Together, these additions turn the original lab into a more complete example of applying TFDV to a realistic business dataset.
 
 ---
 
@@ -176,8 +173,7 @@ If you encounter protobuf-related errors, you may also need to set:
 
 ```bash
 set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python    # Windows (cmd)
-# or
-export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python # macOS / Linux
+
 ```
 
 before starting Jupyter.
@@ -198,7 +194,7 @@ TFDV_Lab1.ipynb
 
 and run the cells from top to bottom.
 
-The original lab section and the Telco extension section should both run and display all TFDV outputs, including:
+The Telco extension section should both run and display all TFDV outputs, including:
 
 - Statistics visualizations  
 - Inferred schema views  
@@ -216,15 +212,6 @@ The original lab section and the Telco extension section should both run and dis
 - Use the summary tables from `report_utils.py` as quick reference points for reporting and discussion.
 
 ---
-
-## Possible extensions
-
-If you want to build on this project, here are some ideas:
-
-- Add additional slices (for example, by contract type or payment method) and compare them with TFDV.
-- Extend the schema with more detailed domain constraints, such as allowed categories for specific features.
-- Connect the validation step to a simple model-training pipeline so that training is only performed when data passes validation.
-- Generate more detailed reports or dashboards from the TFDV statistics and anomalies.
 
 ---
 
